@@ -1,0 +1,621 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+
+/* =========================
+   1. GENERAL
+========================= */
+
+:root {
+    --paper: #f5f0e8;
+    --white: #fffcf7;
+    --ink: #282321;
+    --muted: #716a64;
+    --line: #dfd2c1;
+    --field: #f6f1e8;
+    --wine: #762e35;
+    --gold: #947044;
+    --note: #e8ddcf;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+/* =========================
+   2. HEADER
+========================= */
+
+.site-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-mark {
+    display: grid;
+    place-items: center;
+    width: 39px;
+    height: 39px;
+    border: 1px solid #ddcdb9;
+    border-radius: 50%;
+    background: #eee4d7;
+    color: var(--wine);
+    font-size: 26px;
+    line-height: 1;
+}
+
+.brand-eyebrow {
+    margin-bottom: 2px;
+    color: #71665e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.brand-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.private-label {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.check-icon {
+    color: var(--gold);
+    font-size: 18px;
+    margin-right: 7px;
+}
+
+
+/* =========================
+   3. MAIN INTRODUCTION
+========================= */
+
+.page-content {
+    padding-top: 46px;
+    padding-bottom: 76px;
+}
+
+.intro-section {
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr;
+    align-items: end;
+    gap: 58px;
+    padding-bottom: 42px;
+    border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+    margin: 0 0 7px;
+    color: var(--wine);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.intro-copy h1 {
+    margin: 14px 0 18px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(34px, 3.4vw, 43px);
+    line-height: 1.18;
+    letter-spacing: -1.25px;
+    font-weight: 700;
+}
+
+.intro-description {
+    max-width: 600px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+
+/* =========================
+   4. CURATORIAL NOTE
+========================= */
+
+.curatorial-note {
+    margin-bottom: 0;
+    padding: 21px 22px;
+    border: 1px solid #d9c9b6;
+    border-radius: 12px;
+    background: var(--note);
+    box-shadow: 0 3px 5px rgba(48, 34, 22, 0.10);
+}
+
+.curatorial-note h2 {
+    margin: 12px 0 16px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.note-status {
+    margin: 0;
+    color: #332c27;
+    font-size: 12px;
+}
+
+.note-status span {
+    color: var(--gold);
+    margin-right: 8px;
+    font-size: 17px;
+}
+
+
+/* =========================
+   5. CATALOGUE SECTION
+========================= */
+
+.catalogue-section {
+    padding: 39px 0 40px;
+    border-bottom: 1px solid var(--line);
+}
+
+.section-heading,
+.collection-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 24px;
+}
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2,
+.collection-heading h2 {
+    margin: 0;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.section-hint {
+    max-width: 380px;
+    margin: 0 0 2px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   6. FORM
+========================= */
+
+.catalogue-form {
+    padding: 26px 27px 25px;
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    background: var(--white);
+    box-shadow: 0 2px 4px rgba(48, 34, 22, 0.10);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 17px;
+}
+
+.field-group {
+    min-width: 0;
+}
+
+.field-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.form-control,
+.form-select {
+    min-height: 40px;
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    background-color: var(--field);
+    color: var(--ink);
+    font-family: inherit;
+    font-size: 12px;
+    box-shadow: none !important;
+}
+
+.form-control::placeholder {
+    color: #7b746e;
+    opacity: 1;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #b69b7b;
+    background-color: #fffdf9;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================
+   7. PRICE INPUT
+========================= */
+
+.price-input {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding-left: 12px;
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    background: var(--field);
+    color: var(--muted);
+}
+
+.price-input .form-control {
+    border: 0;
+    background: transparent;
+    padding-left: 0;
+}
+
+
+/* =========================
+   8. IMAGE INPUT
+========================= */
+
+.file-control {
+    padding: 6px 9px;
+    border-style: dashed;
+}
+
+.file-control::file-selector-button {
+    margin: -1px 10px -1px 0;
+    padding: 6px 12px;
+    border: 0;
+    border-radius: 8px;
+    background: #e8ddcf;
+    color: #302923;
+    font: inherit;
+    font-weight: 700;
+}
+
+
+/* =========================
+   9. DESCRIPTION
+========================= */
+
+textarea.form-control {
+    min-height: 108px;
+    resize: vertical;
+    padding: 12px 13px;
+}
+
+
+/* =========================
+   10. FORM BUTTONS
+========================= */
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+}
+
+.form-note {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.info-icon {
+    margin-right: 6px;
+    color: var(--gold);
+    font-size: 15px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    min-height: 39px;
+    padding: 10px 17px;
+    border: 0;
+    border-radius: 11px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 3px 4px rgba(48, 34, 22, 0.13);
+}
+
+.btn-add {
+    background: var(--wine);
+}
+
+.btn-add:hover {
+    background: #61242a;
+    color: #fff;
+}
+
+.btn-update {
+    background: var(--gold);
+}
+
+.btn-update:hover {
+    background: #7e5d36;
+    color: #fff;
+}
+
+
+/* =========================
+   11. COLLECTION SECTION
+========================= */
+
+.collection-section {
+    padding-top: 39px;
+}
+
+.collection-heading {
+    margin-bottom: 23px;
+}
+
+
+/* =========================
+   12. SEARCH
+========================= */
+
+.search-wrap {
+    position: relative;
+    width: min(380px, 100%);
+}
+
+.search-wrap .form-control {
+    height: 40px;
+    padding-left: 38px;
+    background: var(--white);
+}
+
+.search-icon {
+    position: absolute;
+    top: 7px;
+    left: 13px;
+    z-index: 2;
+    color: var(--muted);
+    font-size: 23px;
+    line-height: 1;
+}
+
+
+/* =========================
+   13. PRODUCT CARDS
+========================= */
+
+.collection-grid {
+    --bs-gutter-x: 1.25rem;
+    --bs-gutter-y: 1.25rem;
+}
+
+.collection-card {
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: 0 2px 4px rgba(48, 34, 22, 0.07);
+}
+
+.collection-card .object-image {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    background: #e8ddcf;
+    border-bottom: 1px solid var(--line);
+}
+
+.collection-card .card-body {
+    padding: 18px;
+}
+
+.object-index {
+    color: var(--wine);
+    font-size: 10px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.collection-card .card-title {
+    margin: 9px 0 12px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.card-detail {
+    margin: 7px 0;
+    color: var(--muted);
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.card-detail strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+
+/* =========================
+   14. DELETE / UPDATE BUTTONS
+========================= */
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 17px;
+}
+
+.card-actions .btn {
+    min-height: 34px;
+    padding: 8px 12px;
+    box-shadow: none;
+}
+
+.btn-delete {
+    background: #f0e2df;
+    color: var(--wine);
+}
+
+.btn-delete:hover {
+    background: #e6d0cc;
+    color: var(--wine);
+}
+
+.btn-edit {
+    background: #e8ddcf;
+    color: #5d452b;
+}
+
+.btn-edit:hover {
+    background: #ddcbb5;
+    color: #5d452b;
+}
+
+
+/* =========================
+   15. EMPTY STATE
+========================= */
+
+.empty-state {
+    padding: 25px;
+    text-align: center;
+    color: var(--muted);
+}
+
+
+/* =========================
+   16. FOOTER
+========================= */
+
+.site-footer {
+    border-top: 1px solid var(--line);
+    background: var(--white);
+}
+
+.footer-inner {
+    min-height: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+
+/* =========================
+   17. RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 767px) {
+
+    .page-content {
+        padding-top: 30px;
+        padding-bottom: 45px;
+    }
+
+    .intro-section {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding-bottom: 30px;
+    }
+
+    .intro-copy h1 {
+        font-size: 35px;
+    }
+
+    .desktop-break {
+        display: none;
+    }
+
+    .section-heading,
+    .collection-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .section-hint {
+        max-width: none;
+    }
+
+    .catalogue-form {
+        padding: 20px 17px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .form-actions {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .search-wrap {
+        width: 100%;
+    }
+
+    .private-label {
+        font-size: 10px;
+        text-align: right;
+    }
+
+    .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+}

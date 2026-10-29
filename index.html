@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The House Collection | Acquisitions Archive</title>
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <div class="brand">
+                <div class="brand-mark">▱</div>
+
+                <div>
+                    <p class="brand-eyebrow">THE HOUSE COLLECTION</p>
+                    <div class="brand-title">Acquisitions Archive</div>
+                </div>
+            </div>
+
+            <div class="private-label">
+                <span class="check-icon">✓</span>
+                Private collection register
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="container page-content">
+
+        <!-- INTRODUCTION -->
+        <section class="intro-section">
+
+            <div class="intro-copy">
+
+                <p class="eyebrow">EXHIBITION REGISTER / 2025</p>
+
+                <h1>
+                    A considered catalogue
+                    <br class="desktop-break">
+                    for the objects that
+                    <br class="desktop-break">
+                    define your collection.
+                </h1>
+
+                <p class="intro-description">
+                    Record each electronic object with the care of a gallery label.
+                    Search, revise, and maintain a lucid view of every work in
+                    the collection.
+                </p>
+
+            </div>
+
+            <aside class="curatorial-note">
+
+                <p class="eyebrow">CURATORIAL NOTE</p>
+
+                <h2>
+                    Every entry is a small act of preservation.
+                </h2>
+
+                <p class="note-status">
+                    <span>▱</span>
+                    Stored locally in your archive
+                </p>
+
+            </aside>
+
+        </section>
+
+
+        <!-- ADD / UPDATE PRODUCT -->
+        <section class="catalogue-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">NEW ACQUISITION</p>
+                    <h2>Catalogue an object</h2>
+                </div>
+
+                <p class="section-hint">
+                    Use precise names and descriptions so each work
+                    remains easy to locate later.
+                </p>
+
+            </div>
+
+
+            <form class="catalogue-form" onsubmit="return false;">
+
+                <div class="form-grid">
+
+                    <!-- PRODUCT NAME -->
+                    <div class="field-group">
+
+                        <label for="productname">Work title</label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="productname"
+                            placeholder="e.g. Aurora Screen">
+
+                    </div>
+
+
+                    <!-- PRODUCT PRICE -->
+                    <div class="field-group">
+
+                        <label for="productPrice">Acquisition value</label>
+
+                        <div class="price-input">
+
+                            <span>$</span>
+
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="productPrice"
+                                placeholder="0.00"
+                                min="0"
+                                step="0.01">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PRODUCT CATEGORY -->
+                    <div class="field-group">
+
+                        <label for="productcategory">Department</label>
+
+                        <select id="productcategory" class="form-select">
+
+                            <option value="" selected disabled>
+                                Choose a department
+                            </option>
+
+                            <option value="tv">TV</option>
+                            <option value="screen">Screen</option>
+                            <option value="mobile">Mobile</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- PRODUCT IMAGE -->
+                    <div class="field-group">
+
+                        <label for="imageinput">Object image</label>
+
+                        <input
+                            id="imageinput"
+                            type="file"
+                            class="form-control file-control"
+                            accept="image/*">
+
+                    </div>
+
+
+                    <!-- PRODUCT DESCRIPTION -->
+                    <div class="field-group full-width">
+
+                        <label for="Comments">Curatorial description</label>
+
+                        <textarea
+                            class="form-control"
+                            id="Comments"
+                            placeholder="Materials, condition, provenance, or a note on why this object belongs in the collection..."></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FORM ACTIONS -->
+                <div class="form-actions">
+
+                    <p class="form-note">
+                        <span class="info-icon">ⓘ</span>
+                        Add a record, then manage it from the collection wall.
+                    </p>
+
+                    <div class="buttons">
+
+                        <button
+                            onclick="addproduct()"
+                            id="btnAdd"
+                            type="button"
+                            class="btn btn-add">
+
+                            Add to collection
+
+                        </button>
+
+
+                        <button
+                            onclick="updateproduct()"
+                            id="btnUpdate"
+                            type="button"
+                            class="btn btn-update d-none">
+
+                            Save revised record
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- COLLECTION -->
+        <section class="collection-section">
+
+            <div class="collection-heading">
+
+                <div>
+                    <p class="eyebrow">COLLECTION WALL</p>
+                    <h2>Works on view</h2>
+                </div>
+
+                <!-- SEARCH -->
+                <div class="search-wrap">
+
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        id="search"
+                        oninput="searchinput()"
+                        type="search"
+                        class="form-control"
+                        placeholder="Search the collection by title">
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTS WILL APPEAR HERE -->
+            <div id="display" class="row collection-grid"></div>
+
+            <p id="emptyState" class="empty-state d-none">
+                No works match your search. Try another title or add
+                a new object above.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <span>
+                Acquisitions Archive · A private digital collection
+            </span>
+
+            <span>
+                Catalogue with attention, preserve with care.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="javascript/main.js"></script>
+
+</body>
+
+</html>
